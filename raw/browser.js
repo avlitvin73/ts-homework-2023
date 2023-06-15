@@ -65,7 +65,6 @@ export function initAnimation(domOptions) {
             }
         }
     }
-    // Делаем один таймер анимации, чтобы значения на всех дисплеях менялись одновременно
     setInterval(animateFrame, frameDelay);
     return frameBuffers;
 }

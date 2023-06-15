@@ -2,15 +2,13 @@ import { segmentNames } from "./model";
 import { clampToLength } from "./utils";
 export function transition(from, to, animateDisplay, animateDisplayOptions) {
     from = clampToLength(from, to.length);
-    // По каждому индексу лежат фреймы дисплея
     const displayFrames = from.map((startDisplayState, i) => {
         return animateDisplay(startDisplayState, to[i], animateDisplayOptions);
     });
     const maxFrames = Math.max(...displayFrames.map((f) => f.length));
-    // На выходе нужно "развернуть" массив – по каждому индексу должен быть один кадр анимации
     const frames = [];
     for (let i = 0; i < maxFrames; i += 1) {
-        frames.push(displayFrames.map((frames) => frames[i] || frames.at(-1))); // Если для дисплея не хватает кадров, повторим последний
+        frames.push(displayFrames.map((frames) => frames[i] || frames.at(-1)));
     }
     return frames;
 }

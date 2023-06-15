@@ -9,12 +9,10 @@ const frameBuffers = initAnimation(domOptions);
 function startAnimation(frames, parent) {
     frameBuffers.set(parent, [...frames].reverse());
 }
-// иллюстрация
 const segmentDescription = document.getElementById('segmentDescription');
 segmentDescription.append(getImage());
 const [descriptionDisplay] = makeDisplays(1, segmentDescription, domOptions);
 updateDisplay('abcdefhijklm'.split('').concat(['g1', 'g2']), descriptionDisplay);
-// далее примеры
 const oneLetter = document.getElementById('oneLetter');
 const oneLetterImage = document.getElementById('oneLetterImage');
 oneLetter.oninput = function (event) {
