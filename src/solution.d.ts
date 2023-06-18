@@ -74,3 +74,8 @@ export type DomOptions = {
 export type SegmentBySegmentOptions = {
   dense?: boolean;
 };
+export interface Options {
+  convertToUpperCase: string;
+  unknownChar: string;
+  dense?: number
+}

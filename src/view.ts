@@ -1,14 +1,10 @@
 import { segmentCodes} from './model';
-import { DisplayState, SegmentCodeKey, SegmentName } from './solution';
+import { DisplayState, Options, SegmentCodeKey, SegmentName } from './solution';
 export function isKnownChar(char: SegmentCodeKey | string) {
     return char in segmentCodes;
 }
 
-export type Options = {
-    convertToUpperCase: string;
-    unknownChar: string;
-    dense?: number
-  };
+
 export function charToDisplay(char: SegmentCodeKey | string, options: Options) {
     console.log(options);
     if (options?.convertToUpperCase) {
